@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ recipe.title }}</title>
+    <script type="application/ld+json">
+        {{ schema_org_metadata|safe }}
+    </script>
+</head>
+<body>
+    <h1>{{ recipe.title }}</h1>
+    <h2>Ingredients</h2>
+    <ul>
+        {% for ingredient in recipe.ingredients %}
+            <li>{{ ingredient }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Directions</h2>
+    <ol>
+        {% for step in recipe.directions %}
+            <li>{{ step }}</li>
+        {% endfor %}
+    </ol>
+</body>
+</html>
